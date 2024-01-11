@@ -16,7 +16,6 @@
 
     $config = updateLessonConfig();
     $navbartitle = '레슨';
-
 ?>
 <!DOCTYPE html>
 <head>

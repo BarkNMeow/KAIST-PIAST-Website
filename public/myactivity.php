@@ -95,7 +95,7 @@
         return;
     }
 
-    $moneyconfig = json_decode(file_get_contents('../data/json/moneyconfig.json'), true);
+    $moneyconfig = json_decode(file_get_contents(dirname(__DIR__).'/data/json/moneyconfig.json'), true);
     $navbartitle = '내 활동';
 ?>
 
