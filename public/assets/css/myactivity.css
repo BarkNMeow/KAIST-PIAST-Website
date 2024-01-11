@@ -1,0 +1,239 @@
+html{
+    --subnavbar-height: 0rem;
+}
+
+.history-container{
+    display: flex;
+    padding: 1rem;
+    border-radius: .5rem;
+    text-align: center;
+}
+
+.history-sem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    min-width: 7.5rem;
+    padding-right: 1rem;
+    margin-right: 1rem;
+    border-right: 1px solid var(--grey-224);
+}
+
+.history-container > div:last-child{
+    flex-grow: 3;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: .75rem;
+}
+
+.history-title{
+    font-size: .85rem;
+    font-weight: var(--light);
+}
+
+.history-value{
+    font-weight: var(--medium);
+}
+
+.history-sem .history-title{
+    font-size: 1.1rem;
+    font-weight: var(--regular);
+}
+
+.history-sem .history-value{
+    font-size: 1.8rem;
+    font-weight: var(--bold);
+}
+
+.activity-summary-container{
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+.activity-summary-container.ob{
+    text-align: center;
+    filter: grayscale(1);
+}
+
+.graph-container{
+    position: relative;
+    padding: .5rem;
+}
+
+.scorelist-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    white-space: nowrap;
+}
+
+.scorelist-container > div{
+    flex-grow: 1;
+    border-radius: .5rem;
+    padding: 1rem;
+}
+
+.scorelist-container > div:first-child{
+    grid-column: 1 / 3;
+    display: flex;
+    padding-bottom: calc(1rem - 4px);
+}
+
+.scorelist-jm{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: .5rem 2rem .5rem 0;
+    border-right: 1px solid var(--grey-224);
+    width: fit-content;
+    text-align: center;
+}
+
+.scorelist-jm-title{
+    font-size: 1.5rem;
+    font-weight: var(--bold);
+    margin-top: -.2rem;
+}
+
+.scorelist-jm-table {
+    display: flex;
+    flex-grow: 1;
+    background: var(--grey-248);
+    overflow-x: scroll;
+}
+
+.scorelist-jm-table::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+    padding-top: 2.75rem;
+    background: var(--grey-240);
+}
+
+.scorelist-jm-table::-webkit-scrollbar-thumb{
+    background: var(--grey-160);
+    background-clip: padding-box;
+    border: 1.5px solid transparent;
+    border-radius: 100px;
+}
+
+.scorelist-jm-table.ob{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    filter: grayscale(1);
+}
+
+.scorelist-jm-table > div{
+    display: flex;
+    flex-direction: column;
+    width: 5rem;
+    border-right: 1px solid var(--grey-224);
+    background: var(--white);
+}
+
+.scorelist-jm-head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.6rem;
+    border-bottom: 1px solid var(--grey-224);
+    color: var(--black);
+    font-weight: var(--medium);
+}
+
+.scorelist-jm-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.6rem;
+}
+
+.scorelist-title{
+    width: 100%;
+    display: flex;
+    margin-top: -.25rem;
+    margin-bottom: .2rem;
+    align-items: center;
+}
+
+.scorelist-title > div:first-child{
+    font-size: 1.5rem;
+    font-weight: var(--bold);
+    margin-right: 1rem;
+}
+
+.scorelist-title > div:last-child{
+    margin-left: auto;
+    font-size: 1.2rem;
+    font-weight: var(--medium);
+}
+
+.scorelist-row{
+    display: flex;
+    padding: .2rem 0;
+}
+
+.scorelist-row > div:first-child{
+    flex-grow: 1;
+    word-break: keep-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 1rem;
+}
+
+.scorelist-row > div:last-child{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 2.5rem;
+}
+
+.scorelist-norow{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 6rem;
+    margin-top: 1rem;
+    background: var(--grey-248);
+}
+
+.scorelist-norow > div{
+    filter: grayscale(1);
+    font-size: 1.5rem;
+    margin-bottom: .25rem;
+}
+
+.bankacc-container{
+    padding: .3rem .8rem;
+    border-radius: .5rem;
+    font-weight: var(--medium);
+}
+
+.due-container{
+    display: flex;
+    padding: .3rem .8rem;
+    border-radius: .5rem;
+}
+
+.due-container > div:first-child{
+    display: flex;
+    align-items: center;
+    font-size: 1.35rem;
+    font-weight: var(--bold);
+}
+
+@media screen and (max-width: 1024px){
+    .activity-summary-container{
+        grid-template-columns: repeat(2, 50%);
+    }
+
+    .graph-container{
+        padding: 1rem;
+    }
+}

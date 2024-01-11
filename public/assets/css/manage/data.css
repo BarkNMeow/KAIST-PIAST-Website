@@ -1,0 +1,84 @@
+.backup-link-wrapper{
+    width: 100%;
+    max-width: var(--max-content-width);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, auto));
+    gap: 1.25rem;
+}
+
+.backup-link-wrapper a{
+    display: flex;
+    align-items: center;
+    padding: .5rem 1.2rem;
+    font-size: 1.05rem;
+    color: var(--black);
+    font-weight: var(--medium);
+    background: var(--white);
+    border-radius: .5rem;
+    transition-duration: .2s;
+}
+
+.backup-link-wrapper a:hover{
+    background: var(--grey-248);
+}
+
+.backup-link-wrapper i{
+    font-size: 1.5rem;
+    margin-left: auto;
+}
+
+.bi-file-earmark-spreadsheet-fill{
+    color: rgb(57, 153, 45);
+}
+
+ul{
+    padding-left: 1.5rem;
+}
+
+.content-wrapper{
+    font-size: 1.1rem;
+}
+
+.warning-text{
+    color: red;
+    font-weight: var(--bold);
+}
+
+.content-warning{
+    width: 100%;
+    font-weight: var(--medium);
+    word-break: keep-all;
+}
+
+.password-form{
+    display: flex;
+    place-items: center;
+    width: 100%;
+    width: fit-content;
+    height: fit-content;
+    margin-top: .5rem;
+}
+
+.password-input{
+    height: 2rem;
+    width: 11rem;
+    padding: .1rem .4rem;
+    margin: 0 .5rem;
+}
+
+.confirm-btn{
+    width: fit-content;
+    height: fit-content;
+    padding: .1rem .75rem;
+    background: var(--white);
+    border: 1px solid var(--black);
+    border-radius: .5rem;
+    transition-duration: .2s;
+    color: var(--black);
+    font-size: 1.05rem;
+}
+
+.confirm-btn:hover{
+    color: var(--white);
+    background: var(--black);
+}

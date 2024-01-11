@@ -1,0 +1,55 @@
+.tab-btn-wrapper{
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: fit-content;
+    margin-top: -1.25rem;
+    text-align: left;
+}
+
+.tab-btn-menu-wrapper{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 2.75rem;
+}
+
+.tab-btn-menu-wrapper:not(:last-child){
+    margin-right: .75rem;
+}
+
+.tab-btn-menu-wrapper button{
+    height: 100%;
+    width: 7rem;
+    background: none;
+    color:var(--grey-192);
+    font-weight: var(--medium);
+    font-size: 1.025rem;
+    transition-duration: .2s;
+}
+
+.tab-btn.selected{
+    color: var(--black);
+}
+
+.tab-btn:not(.selected):hover{
+    color: var(--grey-96);
+}
+
+#tab-btn-border-bottom{
+    position: absolute;
+    width: 7rem;
+    height: 3px;
+    background: black;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(0.1, 1.6, 0.1);
+}
+
+.tab-btn-fill{
+    flex-grow: 1;
+}
+
+.tab-container{
+    margin-top: 1.25rem;
+    min-height: 100%;
+}

@@ -1,0 +1,59 @@
+body{
+    height: 100vh;
+}
+
+main{
+    display: table;
+    min-width: fit-content;
+    padding: 3rem 0;
+}
+
+.all-wrapper{
+    width: 30%;
+    min-width: fit-content;
+    height: fit-content;
+    text-align: center;
+    border-radius: 2rem;
+    padding: 2rem 3rem;
+    margin: 0 auto;
+}
+
+.congrats{
+    font-size: 1.1rem;
+}
+
+.button-tohome{
+    width: fit-content;
+    height: fit-content;
+    margin-top: 2rem;
+    padding: 0.3rem 0.9rem;
+    color: var(--white);
+    font-size: 1.2rem;
+    background: var(--black);
+    border: 1px solid var(--black);
+    border-radius: 0.5rem;
+    transition-duration: .2s;
+}
+
+.button-tohome:hover{
+    color: var(--black);
+    background: var(--white);
+}
+
+.rainbow{
+    color: red;
+    animation-name: rainbow;
+    animation-duration: 2.8s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rainbow {
+    0%{color: red;}
+    14%{color: orange;}
+    29%{color: yellow;}
+    43%{color: yellowgreen;}
+    57%{color: blue;}
+    71%{color: navy;}
+    86%{color: purple};
+    100%{color: red;}
+}

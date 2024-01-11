@@ -1,0 +1,84 @@
+.subnavbar-container{
+    width: 100%;
+    height: var(--subnavbar-height);
+    background: var(--grey-64);
+}
+
+.subnavbar{
+    height: 100%;
+    width: 100%;
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    padding: 0 var(--content-horizontal-padding);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.subnavbar-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: fit-content;
+    height: var(--subnavbar-height);
+    display: flex;
+    justify-content: center;
+    font-size: 1.025rem;
+}
+
+.subnavbar-menu a{
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding: 0 .8rem;
+    /* margin-bottom: .25rem; */
+    color: var(--grey-144);
+    transition-duration: .2s;
+    transition-property: color;
+}
+
+.subnavbar-menu > div{
+    height: 4px;
+    width: 0;
+    background: var(--grey-144);
+    transition-duration: .2s;
+}
+
+.subnavbar-menu:not(:first-child){
+    margin-left: .6rem;
+}
+
+.subnavbar-menu.selected a{
+    color: var(--white);
+    font-weight: var(--medium);
+}
+
+.subnavbar-menu.selected div{
+    width: 100%;
+}
+
+.subnavbar-menu:hover:not(.selected) a{
+    color: var(--grey-208);
+}
+
+.subnavbar-menu:hover:not(.selected) div{
+    background: var(--grey-96);
+    width: 100%;
+}
+
+@media screen and (max-width: 1024px){
+
+}
+
+
+@media screen and (max-width: 768px){
+    .subnavbar-container{
+        left: 0;
+        width: 100%;
+    }
+
+    .subnavbar{
+        padding-left: 2rem;
+    }
+}

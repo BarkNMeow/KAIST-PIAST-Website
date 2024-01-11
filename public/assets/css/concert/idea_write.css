@@ -1,0 +1,96 @@
+#toolbar{
+    width: 100%;
+    height: 3rem;
+    color: var(--black);
+}
+
+#quill{
+    width: 100%;
+    min-height: 24rem;
+    color: var(--black);
+    font-size: 1rem;
+}
+
+.idea-table, .chklist-table{
+    width: 100%;
+    min-width: fit-content;
+}
+
+.chklist-table{
+    margin-top: 2.5rem;
+}
+
+.idea-table tr td, .chklist-table tr td{
+    padding: .3rem 1rem;
+    border: 1px solid var(--grey-144);
+}
+
+.idea-table tr td:nth-child(2), .chklist-table tr td:nth-child(2){
+    width: calc(100% - 10rem);
+    color: var(--black);
+    text-align: left;
+}
+
+.chklist-table tr td:first-child   {
+    background: var(--grey-240)
+}
+
+.idea-table tr td:nth-child(1), .songlist-table tr:first-child td:nth-child(1){
+    width: 10rem;
+    background: var(--grey-144);
+    color: var(--white);
+    text-align: right;
+    font-weight: var(--bold);
+}
+
+.chklist-table tr:first-child td:first-child{
+    background: var(--grey-144);
+    color: var(--white);
+    font-weight: var(--bold);
+}
+
+.idea-title, .idea-theme-title{
+    height: 1.8rem;
+    padding: .1rem .4rem;
+}
+
+.idea-title{
+    max-width: 35rem;
+}
+
+.idea-theme-title{
+    max-width: 20rem;
+}
+
+.idea-title-info{
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--grey-96);
+    font-weight: var(--light);
+}
+
+.submit-wrapper{
+    width: 100%;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.submit-wrapper button{
+    width: fit-content;
+    height: fit-content;
+    padding: .3rem .9rem;
+    border: none;
+    border-radius: .75rem;
+    background: var(--black);
+    color: var(--white);
+    font-size: 1.1rem;
+    transition-duration: .2s;
+}
+
+.submit-wrapper button:enabled:hover{
+    background: var(--grey-80);
+}
+
+.submit-wrapper button:disabled{
+    background:var(--grey-192);
+}

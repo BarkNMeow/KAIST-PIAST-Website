@@ -1,0 +1,229 @@
+html{
+    --subnavbar-height: 0rem;
+}
+
+main{
+    display: flex;
+}
+
+.phonebook-tab{
+    position: relative;
+    width: calc(3rem - 1px);
+    padding-top: 1rem;
+}
+
+.phonebook-tab button{
+    position: absolute;
+    background: white;
+    width: 3rem;
+    height: 3rem;
+    border-radius: .25rem 0 0 .25rem;
+    margin-bottom: .5rem;
+    color: var(--grey-192);
+    font-size: 1.25rem;
+    transition-duration: .2s;
+}
+
+.phonebook-tab button:hover, .phonebook-tab button.selected{
+    color: var(--grey-112);
+    border-right-color: var(--white) !important;
+}
+
+.phonebook-tab button:nth-child(2){
+    top: 4.5rem;
+}
+
+.phonebook-tab button:nth-child(3){
+    top: 8rem;
+}
+
+.phonebook-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-grow: 1;
+    height: fit-content;
+    padding: .5rem 0;
+    border-radius: .5rem;
+}
+
+#page-left, #page-right{
+    padding: 0 1rem;
+    overflow-y: scroll;
+    overscroll-behavior: none;
+    height: fit-content;
+    max-height: calc(var(--vh, 1vh) * 100 - var(--navbar-height) - 7.5rem);
+}
+
+#page-left::-webkit-scrollbar, #page-right::-webkit-scrollbar{
+    width: 6px;
+    height: 6px;
+    padding-top: 2.75rem;
+    background: var(--grey-240);
+}
+
+#page-left::-webkit-scrollbar-thumb, #page-right::-webkit-scrollbar-thumb{
+    background: var(--grey-224);
+    background-clip: padding-box;
+    border: 1.5px solid transparent;
+    border-radius: 100px;
+}
+
+#page-left{
+    border-right: 1px solid var(--grey-224);
+}
+
+#page-right{
+    direction: rtl;
+}
+
+#page-right > div{
+    direction: ltr;
+}
+
+.blank-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(var(--vh, 1vh) * 100 - var(--navbar-height) - 7.5rem);
+    font-size: 1.2rem;
+    color: var(--grey-208);
+}
+
+#page-left-idx, #page-right-idx{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    margin-top: .5rem;
+    padding: .5rem 1rem 0 1rem;
+    height: 2.5rem;
+}
+
+#page-right-idx{
+    justify-content: flex-end;
+}
+
+#page-left-idx button, #page-right-idx button{
+    background: none;
+    padding: 0;
+    font-size: 1.3rem;
+    transform: translateY(.025rem);
+}
+
+#page-left-idx button:disabled, #page-right-idx button:disabled{
+    color: var(--grey-224);
+}
+
+.fake-btn{
+    display: none;
+}
+
+.gen-header{
+    background: var(--grey-224);
+    font-weight: var(--bold);
+    font-size: 1.35rem;
+    text-align: center;
+    padding: .5rem 0;
+}
+
+.person-container{
+    padding: .75rem .5rem;
+    font-size: .9rem;
+    height: 6.5rem;
+}
+
+.person-container > div:first-child{
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: var(--medium);
+    margin-bottom: .3rem;
+}
+
+.person-container > div:first-child > a:last-child{
+    flex-grow: 1;
+    text-align: right;
+    color: rgb(27, 0, 182);
+}
+
+.person-container > div:nth-child(2){
+    display: flex;
+    color: var(--grey-176);
+    margin-bottom: .3rem;
+}
+
+.person-container > div:nth-child(2) > div:last-child{
+    margin-left: 1rem;
+}
+
+.tmi-wrapper{
+    display: flex;
+    align-items: center;
+    grid-column: 1 / 3;
+    font-weight: var(--light);
+    color: var(--grey-80);
+}
+
+.tmi-wrapper > div{
+    max-width: calc(100% - 1rem);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.tmi-wrapper.notmi{
+    color: var(--grey-224);
+}
+
+.tmi-wrapper i.bi-pencil-fill{
+    margin-left: .5rem;
+    cursor: pointer;
+    color: var(--grey-224);
+    transition-duration: .2s;
+}
+
+.tmi-wrapper i.bi-pencil-fill:hover{
+    color: var(--grey-176);
+}
+
+.tmi-wrapper input{
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0;
+    border-bottom: 1px solid var(--black) !important;
+    width: 100%;
+    font-size: .9rem !important;
+    font-weight: inherit;
+    color: var(--grey-80);
+}
+
+@media screen and (max-width: 768px){
+    .phonebook-wrapper{
+        grid-template-columns: 100% 100%;
+    }
+
+    #page-right{
+        direction: ltr;;
+    }
+
+    #page-left, #page-right ,#page-left-idx, #page-right-idx{
+        display: none;
+    }
+
+    #page-left.shown, #page-right.shown{
+        display: block;
+    }
+
+    #page-left-idx.shown, #page-right-idx.shown{
+        display: flex;
+        grid-column: 1 / 2;
+    }
+
+    #page-left-idx > div, #page-right-idx > div{
+        margin: 0 auto;
+        font-size: 1.1rem;
+    }
+
+    .fake-btn{
+        display: inline-block;
+    }
+}

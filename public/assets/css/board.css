@@ -1,0 +1,65 @@
+#page-select{
+    width: 3rem;
+    height: 1.8rem;
+}
+
+.page-number{
+    width: 2.5rem;
+    height: 1.8rem;
+    padding: .3rem;
+}
+
+.board{
+    width: 100%;
+    max-width: var(--max-content-width);
+    margin-bottom: 1;
+    text-align: left;
+}
+
+.board tr th, .board tr td{
+    max-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.board tr th{
+    padding: .55rem .8rem;
+    background: var(--white);
+    color: var(--black);
+    border-top: .1px solid var(--black);
+    border-bottom: .1px solid var(--black);
+    font-size: 1.05rem;
+    font-weight: var(--medium);
+}
+
+.board tr td{
+    padding: .35rem .8rem;
+    border: none;
+    border-bottom: .1px solid var(--grey-208);
+}
+
+.selector-wrapper{
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.selector-btn, .selector-btn-selected, .selector-btn-end{
+    min-width: 1.6rem;
+    background: none;
+    border: none;
+}
+
+.selector-btn{
+    color: var(--grey-176);
+    transition-duration: .2s;
+}
+
+.selector-btn-selected{
+    color: var(--black);
+}
+
+.selector-btn:hover{
+    color: var(--grey-112);
+}

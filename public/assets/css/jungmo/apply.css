@@ -1,0 +1,311 @@
+.jungmo-add-bar{
+    display: flex;
+    align-items: center;
+    max-width: var(--max-content-width);
+    padding: .3rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--grey-96);
+    border-radius: .5rem;
+    color: var(--grey-96);
+    background: var(--grey-192);
+}
+
+#date{
+    height: 1.8rem;
+    padding: .1rem 0;
+    width: 8rem;
+    color:var(--grey-96);;
+    text-align: center;
+}
+
+.jungmo-add-bar .divider{
+    height: 1.8rem;
+    width: 1px;
+    background: var(--grey-96);
+    margin: 0 1.25rem;
+}
+
+#isbsg, #isconcert{
+    margin-left: .3rem;
+}
+
+#isbsg{
+    margin-right: 1.25rem;
+}
+
+.add-jungmo-btn{
+    border: none;
+    background: var(--grey-96);;
+    color: var(--white);
+    width: 5.75rem;
+    padding: .15rem 0;
+    margin-left: auto;
+    transition-duration: .2s;
+}
+
+.add-jungmo-btn:hover{
+    background: var(--grey-80);
+}
+
+.add-jungmo-btn.mobile{
+    display: none;
+    width: 3.5rem;
+    border-radius: .5rem;
+}
+
+.jungmo-wrapper{
+    width: 100%;
+    max-width: var(--max-content-width);
+    padding: 1rem 2rem;
+    margin-bottom: 1.25rem;
+    border-radius: 1rem;
+}
+
+.jungmo-wrapper.noinfo{
+    text-align: center;
+    color: var(--grey-144);
+    filter: grayscale(1);
+    padding-top: .75rem;
+}
+
+.jungmo-wrapper.noinfo span{
+   font-size: 2.5rem;
+}
+
+.past{
+    color: var(--grey-176);
+}
+
+.past .box-title{
+    color: var(--grey-176);
+}
+
+.jungmo-header{
+    display: flex;
+    align-items: center;
+    padding-bottom: .2rem;
+}
+
+.jungmo-header .box-title{
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+}
+
+.jungmo-info-title{
+    font-size: 1.6rem;
+    font-weight: var(--bold);   
+}
+
+.jungmo-header i{
+    cursor: pointer;
+    color: var(--nored);
+    margin-right: .5em;
+    transition-duration: .2s;
+}
+
+.jungmo-header i:hover{
+    color:var(--nored-hover);
+}
+
+.jungmo-header img{
+    height: 2rem;
+    width: auto;
+    margin-left: .1rem;
+}
+
+.jungmo-wrapper.past .jungmo-header img{
+    filter: grayscale(100%) opacity(0.5);
+}
+
+.jungmo-header button{
+    width:fit-content;
+    height: fit-content;
+    padding: .1rem .8rem;
+    border-radius: 100rem;
+    background: white;
+    margin-left: .6rem;
+    transition-duration: .2s;
+    transform: translateY(.1rem);
+}
+
+.jungmo-header button[name=jungmo-apply]{
+    border: 1px solid var(--yesgreen);
+    color: var(--yesgreen);
+}
+
+.jungmo-header button[name=jungmo-apply]:hover{
+    background: var(--yesgreen);
+    color: white;
+}
+
+.jungmo-header button:disabled{
+    border: 1px solid var(--grey-176);
+    color: var(--grey-176);
+}
+
+.jungmo-post-wrapper{
+    padding: 0 .5rem;   
+}
+
+.jungmo-info{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: .6rem 0 .3rem 0;
+    font-size: 1.1rem;
+}
+
+.jungmo-title{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: var(--bold);
+    margin-right: .5rem;
+}
+
+.jungmo-name, .jungmo-time{
+    min-width: fit-content;
+}
+
+.jungmo-name{
+    margin-right: .5rem;
+}
+
+.jungmo-info i{
+    cursor: pointer;
+    color: var(--grey-192);
+    margin-left: .4rem;
+}
+
+.jungmo-info i:hover{
+    color: var(--grey-160);
+}
+
+.jungmo-post{
+    width: 100%;
+    height:fit-content;
+    padding: .3rem 0 .6rem 0;
+}
+
+.jungmo-totaltime{
+    padding: .3rem 0;
+    margin-bottom: .5rem;
+    text-align: center;
+    background: var(--grey-240);
+    color: var(--grey-112);
+}
+
+.past .jungmo-totaltime{
+    background: var(--grey-248);
+    color: var(--grey-192);
+}
+
+.jungmo-noapply{
+    padding-top: .5rem;
+    padding-bottom: .75rem;
+    text-align: center;
+    color: var(--grey-144);
+    filter: grayscale(1);
+}
+
+.jungmo-noapply span{
+    font-size: 2.5rem;
+}
+
+.past .jungmo-noapply{
+    color: var(--grey-192);
+}
+
+.past .jungmo-noapply span{
+    filter: brightness(120%);
+}
+
+#post-input-container{
+    padding: 1rem 0;
+}
+
+#quill{
+    width: 100%;
+    min-height: 4.5rem;
+    font-size: 1rem;
+}
+
+.ql-toolbar.ql-snow{
+    text-align: left;
+}
+
+.ql-editor{
+    height: auto;
+    overflow-y: auto;
+}
+
+.post-bottom, .post-top{
+    display: flex;
+    align-items: center;
+    border-style: solid;
+    border-color: #ccc;
+}
+
+.post-top{
+    border-width: 1px 1px 0px 1px; 
+    padding: .3rem .8rem;
+    font-size: 1rem;
+}
+
+.post-bottom{
+    display: flex;
+    border-width: 0px 1px 1px 1px;
+    padding: .2rem .8rem;
+}
+
+#post-char-cnt{
+    font-size: 0.8rem;
+    margin-right: auto;
+}
+
+.post-top input{
+    height: 1.5rem;
+    padding: .1rem .3rem;
+    margin-left: .2rem;
+}
+
+#title{
+    width: 16rem;
+    margin-right: 2rem;
+}
+
+#m, #s{
+    width: 2.25rem;
+    text-align: right;
+}
+
+#jungmo-post-btn, #jungmo-cancel-btn{
+    width: 42px;
+    font-size: 1rem;
+    font-weight: var(--bold);
+    border: none;
+    background: none;
+}
+
+#jungmo-cancel-btn{
+    color: red;
+}
+
+@media screen and (max-width: 768px){
+    .jungmo-add-bar{
+        padding: .5rem 1rem;
+    }
+
+    #isbsg, #isconcert{
+        margin-right: .5rem;
+    }
+
+    .add-jungmo-btn{
+        display: none;
+    }
+
+    .add-jungmo-btn.mobile{
+        display: block;
+    }
+}

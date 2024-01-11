@@ -1,0 +1,58 @@
+.overlay-wrapper{
+    position: relative;
+    max-width: var(--max-content-width);
+    height: fit-content;
+    max-height: 50vh;
+}
+
+.overlay-title{
+    margin-bottom: .15rem;
+}
+
+.overlay-wrapper > div:last-child{
+    text-align: center;
+}
+
+.main-post{
+    overflow-y: scroll;
+    margin-bottom: 1.25rem;
+}
+
+.main-post::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+    background: var(--grey-224);
+}
+
+.main-post::-webkit-scrollbar-thumb{
+    background: var(--grey-160);
+    background-clip: padding-box;
+    border: 2px solid transparent;
+    border-radius: 100px;
+}
+
+.concert-apply-top{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: -.3rem;
+    padding-bottom: .3rem;
+    font-size: 1.2rem;
+    font-weight: var(--bold);
+}
+
+.concert-apply-top button{
+    height: 1.6rem;
+}
+
+.concert-apply-top button:nth-child(2){
+    margin-left: auto;
+}
+
+.concert-apply-top button.btn-white{
+    margin-right: .3rem;
+}
+
+.songlist-wrapper{
+    margin-top: 1rem;
+}

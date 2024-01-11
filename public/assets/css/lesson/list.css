@@ -1,0 +1,189 @@
+#overlay .overlay-wrapper{
+    max-width: 28rem;
+}
+
+#overlay .overlay-wrapper h1{
+    margin: -.5rem 0 .9rem 0;
+}
+
+.overlay-wrapper > div:not(:last-child){
+    margin-bottom: .5rem;
+}
+
+#overlay .overlay-wrapper > div:nth-child(3), #priority-overlay .overlay-wrapper > div:nth-child(2){
+    margin-bottom: 1.6rem;
+}
+
+.overlay-wrapper > div:last-child{
+    text-align: center;
+}
+
+.option-name{
+    font-size: 1.1rem;
+    font-weight: var(--medium);
+    margin-right: .5rem;
+}
+
+#start-date, #end-date{
+    width: 8rem;
+}
+
+#start-time, #end-time{
+    width: 7.5rem;
+}
+
+#start-init, #end-init{
+    background: var(--nored);
+    color: var(--white);
+    padding: 0 .5rem;
+}
+
+.btn-init{
+    padding: .1rem 1.25rem;
+    border: none;
+    background: var(--nored);
+    color: var(--white);
+    font-weight: var(--bold);
+    transition-duration: .2s;
+}
+
+.btn-init:hover{
+    background: rgb(220, 30, 30);
+}
+
+#priority-overlay .overlay-wrapper{
+    max-width: 22rem;
+}
+
+.priority-row{
+    display: grid;
+    grid-template-columns: auto 3rem;
+    text-align: left;
+    padding: .3rem 0;
+}
+
+.priority-row > div:first-child{
+    padding: 0 .8rem;
+}
+
+.priority-row > div:last-child{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.priority-rank{
+    display: block;
+    font-weight: var(--medium);
+    font-size: 1.1rem;
+}
+
+.timer-container{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: .4rem .8rem;
+    background: var(--grey-224);
+    border-radius: .25rem;
+}
+
+.timer-container i{
+    margin-right: .2rem;
+}
+
+#lesson-apply-timer{
+    font-weight: var(--medium);
+    font-size: 1.05rem;
+}
+
+#lesson-apply-setting{
+    margin-left: auto;
+}
+
+.table-header, .table-row{
+    display: grid;
+    grid-template-columns: calc(100% - 9rem) 4.5rem 4.5rem;
+}
+
+.table-header{
+    font-weight: var(--medium);
+    font-size: 1.1rem;
+    border-top: 1px solid var(--black);
+    border-bottom: 1px solid var(--black);
+}
+
+.table-header > div, .table-row > div:nth-child(n + 2){
+    text-align: center;
+}
+
+.table-header > div{
+    padding: .5rem .8rem;
+}
+
+.table-row > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .4rem .8rem;
+}
+
+.table-row.noresult{
+    display: block;
+    padding: .4rem .8rem;
+    text-align: center;
+}
+
+.table-row > div:first-child{
+    display: flex;
+    font-weight: var(--medium);
+    white-space: nowrap;
+    justify-content: left;
+}
+
+.table-row > div:first-child a:hover{
+    color: rgb(50, 50, 180);
+}
+
+.table-row > div:first-child a:first-child{
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 2.75rem);
+}
+
+.table-row > div:first-child i{
+    cursor: pointer;
+    margin-left: .2rem;
+    color: var(--grey-192);
+    transition-duration: .2s;
+}
+
+.table-row > div:first-child i:hover{
+    color: var(--grey-144);
+}
+
+.btn-apply, .btn-cancel, .btn-reserve{
+    padding: .1rem .6rem .2rem .6rem;
+    border: none;
+    color: var(--white);
+    font-size: .9rem;
+}
+
+.btn-apply{
+    background:var(--yesgreen);
+}
+
+.btn-cancel{
+    background:var(--grey-192);
+}
+
+.btn-reserve{
+    background:rgb(218, 215, 64);
+}
+
+.bottom-btn-wrapper{
+    width: 100%;
+    margin-top: 1rem;
+    text-align: right;
+}

@@ -1,0 +1,100 @@
+.overlay-top{
+    display: flex;
+    width: 100%;
+}
+
+.overlay-top i{
+    margin-top: -0.5rem;
+    margin-left: auto;
+    color: var(--grey-192);
+    cursor: pointer;
+    transition-duration: .2s;
+}
+
+.overlay-top i:hover{
+    color: var(--grey-160);
+}
+
+.overlay-search-wrapper{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: .3rem .5rem;
+    background: var(--grey-240);
+    border: 1px solid var(--black);
+    border-radius: .25rem;
+}
+
+.overlay-search-wrapper button, .overlay-search-wrapper input{
+    height: 1.8rem;
+}
+
+.overlay-search-wrapper button{
+    width: 2.2rem;
+    padding: 0 .4rem;
+    margin-left: .2rem;
+}
+
+.overlay-list-header{
+    display: grid;
+    grid-template-columns: auto 4rem;
+    padding: .3rem 8px .3rem 0;
+    margin-top: .75rem;
+    border-top: 1px solid var(--black);
+    border-bottom: 1px solid var(--black);
+    font-weight: var(--medium);
+}
+
+.overlay-list-wrapper{
+    overflow-y: scroll;
+    height: 20rem;
+    border-bottom: 1px solid var(--black);
+}
+
+.overlay-list-wrapper::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+    background: var(--grey-240);
+}
+
+.overlay-list-wrapper::-webkit-scrollbar-thumb{
+    background: var(--grey-160);
+    background-clip: padding-box;
+    border: 1.5px solid transparent;
+    border-radius: 100px;
+}
+
+.overlay-list-row{
+    display: grid;
+    grid-template-columns: auto 4rem;
+    grid-template-rows: 2rem;
+    border-bottom: 1px solid var(--grey-224);
+}
+
+.overlay-list-header > div:not(:last-child), .overlay-list-row > div:not(:last-child){
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.overlay-list-header > div:last-child, .overlay-list-row > div:last-child{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay-btn-wrapper{
+    width: 100%;
+    margin-top: 1.25rem;
+    text-align: center;
+}
+
+.overlay-btn-wrapper button{
+    height: 2rem;
+    padding: 0 .9rem;
+    font-size: 1.05rem;
+}
+
+.overlay-btn-wrapper button:not(:last-child){
+    margin-right: .3rem;
+}

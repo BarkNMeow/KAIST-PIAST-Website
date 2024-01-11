@@ -1,0 +1,7 @@
+html{
+    --subnavbar-height: 0rem;
+}
+
+.gallery-image .thumbnail{
+    aspect-ratio: 7 / 10;
+}

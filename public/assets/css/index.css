@@ -1,0 +1,41 @@
+button{
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
+    border: 1px solid var(--white);
+    border-radius: 100rem;
+    padding: .3rem 1rem;
+    background: none;
+    color: var(--white);
+    transition-duration: .2s;
+}
+
+button:hover{
+    background: var(--white);
+    color: var(--black);
+}
+
+.login-background{
+    width: 100%;
+    height: 100%;
+    background: url('../img/index.jpg');
+    background-position: center;
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+
+.login-shadow{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.25rem;
+    font-weight: var(--medium);
+    background: rgba(0, 0, 0, 0.75);
+    color: var(--white);
+    word-break: keep-all;
+    text-align: center;
+}

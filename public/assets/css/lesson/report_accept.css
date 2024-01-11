@@ -1,0 +1,106 @@
+.att-no-lesson{
+    text-align: center;
+    padding: .75rem 2.25rem 1rem 2.25rem;
+    background: var(--grey-240);
+    color: var(--grey-144);
+    filter: grayscale(1);
+}
+
+.att-no-lesson span{
+    font-size: 2.5rem;
+}
+
+.att-table{
+    display: grid;
+    grid-template-columns: 7.5rem auto;
+    margin-bottom: 1.5rem;
+}
+
+.att-table .lesson-title{
+    grid-column: 1 / 3;
+    padding: .4rem .8rem;
+    font-size: 1.05rem;
+    font-weight: var(--medium);
+    background: var(--grey-112);
+    color: var(--white);
+}
+
+.att-table .no-student{
+    grid-column: 1 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.3rem;
+    filter: grayscale(1);
+}
+
+.att-table .student-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.3rem;
+    border-right: 1px solid var(--grey-224);
+    font-weight: var(--medium);
+}
+
+.att-table .report-btn-list{
+    display: flex;
+    align-items: center;
+    height: 2.3rem;
+    padding: 0 .6rem;
+}
+
+.report-btn-list button{
+    background: var(--grey-240);
+    margin-right: .5rem;
+    padding: 0 .3rem .15rem .3rem;
+    font-size: .95rem;
+}
+
+.report-btn-list i{
+    margin-right: -.1rem;
+}
+
+.btn-report-accepted{
+    color: var(--yesgreen);
+}
+
+.btn-report-rejected{
+    color: var(--nored);
+}
+
+#report-name{
+    width: 6.5rem;
+    margin-left: -.25rem;
+    margin-right: .75rem;
+}
+
+#report-date{
+    width: 7rem;
+}
+
+#image-inner, #image-viewer{
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border: none;
+    cursor: unset;
+}
+
+#quill{
+    border: 1px solid var(--grey-192);
+}
+
+#report-status{
+    margin-left: 0;
+    margin-right: auto;
+}
+
+#btn-accept:disabled, #btn-reject:disabled{
+    background: var(--grey-176);
+}
+
+#report-status{
+    margin-left: .3rem;
+}

@@ -1,0 +1,105 @@
+#teacherlist-overlay .overlay-wrapper, #studentlist-overlay .overlay-wrapper{
+    max-width: 24rem;
+}
+
+#teacherlist-search-input, #studentlist-search-input{
+    width: calc(100% - 4.8rem);
+}
+
+.overlay-list-row button{
+    height: 1.6rem;
+    padding: 0 .6rem;
+    font-size: .9rem;
+}
+
+#studentlist-overlay .overlay-list-row, #studentlist-overlay .overlay-list-header{
+    grid-template-columns: auto 4rem 3rem;
+}
+
+#studentlist-overlay .overlay-list-row > div:nth-child(2), #studentlist-overlay .overlay-list-header > div:nth-child(2){
+    justify-content: center;
+}
+
+.lesson-top{
+    display: flex;
+    align-items: center;
+    margin-top: -.25rem;
+    margin-bottom: .75rem;
+}
+
+.lesson-top > button:last-child{
+    margin-left: auto;
+}
+
+.nolesson-container{
+    border-radius: .5rem;
+    padding: .75rem 2rem 1rem 2rem;
+    color: var(--grey-144);
+    filter: grayscale(1);
+    text-align: center;
+}
+
+.nolesson-container span{
+    font-size: 2.5rem;
+}
+
+.nolesson-container button{
+    margin-top: 1rem;
+}
+
+.lesson-container{
+    display: grid;
+    grid-template-columns: 7.5rem auto 3rem;
+    border-radius: .5rem;
+    padding: .75rem 1.5rem 1rem 1.5rem;
+    margin-bottom: 1.25rem;
+    row-gap: .25rem;
+}
+
+.lesson-container > div:first-child{
+    grid-column: 1 / 3;
+    font-size: 1.5rem;
+    font-weight: var(--bold);
+}
+
+.lesson-menu{
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: .75rem;
+    font-size: 1.05rem;
+}
+
+.lesson-menu i{
+    cursor: pointer;
+    color: var(--grey-192);
+    transition-duration: .1s;
+}
+
+.lesson-menu i:hover{
+    color: var(--grey-144);
+}
+
+.lesson-container-title{
+    padding-right: .3rem;
+}
+
+.lesson-container > div:nth-child(3){
+    display: flex;
+    grid-column: 1 / 2;
+    font-weight: var(--medium);
+}
+
+.lesson-container > div:nth-child(4){
+    display: flex;
+    grid-column: 2 / 4;
+    padding-left: .5rem;
+    font-weight: var(--medium);
+}
+
+.lesson-container > div:last-child{
+    display: flex;
+    grid-column: 1 / 4;
+}
