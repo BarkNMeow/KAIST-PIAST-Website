@@ -1,6 +1,12 @@
 {
+  "_vendor-s-jGDLLM.js": {
+    "file": "assets/vendor-s-jGDLLM.js"
+  },
   "test.tsx": {
-    "file": "assets/test-_2nSTU5t.js",
+    "file": "assets/test-su3HjIEJ.js",
+    "imports": [
+      "_vendor-s-jGDLLM.js"
+    ],
     "isEntry": true,
     "src": "test.tsx"
   }
