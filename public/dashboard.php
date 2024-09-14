@@ -69,7 +69,7 @@
                 <?php
                     $flag = true;
                     if(!is_ob()){
-                        if($activity['ascore'] <= REQ_ASCORE){
+                        if($activity['ascore'] < REQ_ASCORE){
                             echo '<div class="recommend-title">활동 점수가 부족합니다!
                                 <div class="recommend-desc">
                                     <p>활동 인정을 위해서는 활동점수 '.REQ_ASCORE.'점이 필요합니다.</p>
@@ -80,7 +80,7 @@
                         }
 
 
-                        if($activity['pscore'] <= REQ_PSCORE){
+                        if($activity['pscore'] < REQ_PSCORE){
                             echo '<div class="recommend-title">피아노 점수가 부족합니다!
                                 <div class="recommend-desc">
                                     <p>활동 인정을 위해서는 피아노점수 '.REQ_PSCORE.'점이 필요합니다.</p>
@@ -92,7 +92,7 @@
                         }
 
 
-                        if($money['due'] > $money['duepaid']){
+                        if($money['due'] > $money['duepaid'] and $_SESSION['gen'] < 15){
                             echo '<div class="recommend-title">회비가 납부되지 않았습니다!
                                 <div class="recommend-desc">
                                     <p>활동 인정을 위해서는 반드시 회비를 납부해야 합니다.</p>
@@ -105,7 +105,7 @@
                         }
 
 
-                        if($money['fine'] + $money['bill'] > $money['finebillpaid']){
+                        if($money['fine'] + $money['bill'] > $money['finebillpaid'] and $_SESSION['gen'] < 15){
                             echo '<div class="recommend-title">납부하지 않은 돈이 있습니다!
                                 <div class="recommend-desc">
                                     <p>총무가 울고있습니다 😭😭</p>

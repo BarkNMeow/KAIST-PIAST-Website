@@ -1,13 +1,16 @@
 {
-  "_vendor-s-jGDLLM.js": {
-    "file": "assets/vendor-s-jGDLLM.js"
+  "_vendor-1wHqBI8K.js": {
+    "file": "assets/vendor-1wHqBI8K.js"
   },
-  "test.tsx": {
-    "file": "assets/test-su3HjIEJ.js",
+  "address_book.tsx": {
+    "css": [
+      "assets/address_book-CG06aXsC.css"
+    ],
+    "file": "assets/address_book-MQXKrXwL.js",
     "imports": [
-      "_vendor-s-jGDLLM.js"
+      "_vendor-1wHqBI8K.js"
     ],
     "isEntry": true,
-    "src": "test.tsx"
+    "src": "address_book.tsx"
   }
 }

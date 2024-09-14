@@ -81,7 +81,7 @@
             <?php if(isset($_GET['i'])) echo purify_full($row['main']); ?>
         </div>
         <div class="quill-bottom-wrapper">
-            <button class="btn-white btn-radius" onclick="$('#overlay').show();">악보 첨부</button>
+            <button class="btn-white btn-radius" onclick="$('#bbs-file').trigger('click'); $('#bbs-file').show()">악보 첨부</button>
             <span id="bbs-file-summary"></span>
         </div>
         <table class="bbs-option-wrapper">
@@ -156,10 +156,7 @@
             </tr>
         </table>
         <div class="submit-wrapper">
-            <?php
-                if(isset($_GET['i'])) echo '<button class="btn-radius btn-black">수정하기</button>';
-                else echo '<button class="btn-radius btn-black" disabled>업로드</button>';
-            ?>
+            <button class="btn-black btn-radius" disabled><?php echo (isset($_GET['i']) ? '수정하기' : '업로드')?></button>
         </div>
     </main>
     <footer>

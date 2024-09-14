@@ -1,23 +1,24 @@
 // fix info
-let infochecklist = {'yr': true, 'maj': true, 'bday': true, 'phonenum': true};
+let infochecklist = { 'yr': true, 'maj': true, 'bday': true, 'phonenum': true };
 
-let infocheckfunc = { 'yr':  val => ((val === '') ? true : /^[0-9]{2}$/.test(val)),
-                        'maj': _ => true,
-                        'by': verifyDate,
-                        'bm': verifyDate,
-                        'bd': verifyDate,
-                        'phonenum': val => ((val === '') ? true : /^[0-9]{11}$/.test(val))
-                };
+let infocheckfunc = {
+    'yr': val => ((val === '') ? true : /^[0-9]{2}$/.test(val)),
+    'maj': _ => true,
+    'by': verifyDate,
+    'bm': verifyDate,
+    'bd': verifyDate,
+    'phonenum': val => ((val === '') ? true : /^[0-9]{11}$/.test(val))
+};
 
 let infoflag = false;
 Object.keys(infocheckfunc).forEach((key) => {
-    $('#info-' + key).on('input blur', function(){
+    $('#info-' + key).on('input blur', function () {
         const verify = infocheckfunc[key]($(this).val());
 
-        if(['by', 'bm', 'bd'].includes(key)) infochecklist['bday'] = verify;
+        if (['by', 'bm', 'bd'].includes(key)) infochecklist['bday'] = verify;
         else infochecklist[key] = verify;
 
-        if(verify){
+        if (verify) {
             $(this).removeClass('invalid');
             validateInfo();
         } else {
@@ -28,48 +29,48 @@ Object.keys(infocheckfunc).forEach((key) => {
     });
 });
 
-function verifyDate(_){
+function verifyDate(_) {
     const y = $('#info-by').val(), m = $('#info-bm').val(), d = $('#info-bd').val();
     let result = true;
 
-    if(y === '' && m === '' && d === '') result = true;
+    if (y === '' && m === '' && d === '') result = true;
     else if (!y || !m || !d) result = false;
     else {
         let date = y + '-' + m + '-' + d;
         const dateObj = new Date(date);
 
-        if((dateObj === "Invalid Date") || isNaN(dateObj)) result = false;
+        if ((dateObj === "Invalid Date") || isNaN(dateObj)) result = false;
         else {
             const oy = dateObj.getFullYear(), om = dateObj.getMonth() + 1, od = dateObj.getDate();
-            if(oy != y || om != m || od != d) result = false;
+            if (oy != y || om != m || od != d) result = false;
         }
     }
 
-    if(result) $('#info-by, #info-bm, #info-bd').removeClass('invalid');
+    if (result) $('#info-by, #info-bm, #info-bd').removeClass('invalid');
     else $('#info-by, #info-bm, #info-bd').addClass('invalid');
-    
-    return result; 
+
+    return result;
 }
 
-function validateInfo(){
+function validateInfo() {
     flag = true;
-    for(key in infochecklist){
+    for (key in infochecklist) {
         flag = flag && infochecklist[key];
     }
 
     $('#info-update-btn').attr('disabled', !flag);
 }
 
-$('#info-update-btn').click(function(){
+$('#info-update-btn').click(function () {
     let data = {};
     let fields = Object.keys(infochecklist);
 
     data['why'] = 'update_info';
     fields.forEach(tag => {
-        if(tag == 'bday'){
+        if (tag == 'bday') {
             const y = $('#info-by').val(), m = $('#info-bm').val(), d = $('#info-bd').val();
-            if(!y || !m || !d) data[tag] = '';
-            else data[tag] =  y + '-' + m + '-' + d;
+            if (!y || !m || !d) data[tag] = '';
+            else data[tag] = y + '-' + m + '-' + d;
         }
         else data[tag] = $('#info-' + tag).val();
     });
@@ -79,23 +80,41 @@ $('#info-update-btn').click(function(){
         type: 'post',
         data: data,
         dataType: 'json',
-    }).done(function(res){
+    }).done(function (res) {
         alert_float(res.message, res.success);
     });
 });
 
 // passwd update
-$('#passwd-old, #passwd-new').on('input', function(){
-    if($(this).val() === ''){
+$('#passwd-old, #passwd-new').on('input', function () {
+    if ($(this).val() < 8) {
         $(this).addClass('invalid');
         $('#passwd-update-btn').attr('disabled', true);
     } else {
         $(this).removeClass('invalid');
-        $('#passwd-update-btn').attr('disabled', ($('#passwd-old').val() === '' || $('#passwd-new').val() === ''));
-    }    
+        $('#passwd-update-btn').attr('disabled', ($('#passwd-old').val() < 8 || $('#passwd-new').val() < 8));
+    }
 });
 
-$('#passwd-update-btn').click(function(){
+$('#passwd-new').on('input', function () {
+    const desc_list = ['포스텍', '약함', '중간', '강함', '와!샌즈']
+    const meter = $('#passwd-strength meter'), desc = $('#passwd-strength span');
+    const val = $(this).val();
+
+    if (val.length < 8) {
+        meter.val(0)
+        desc.html('짧음')
+        return false;
+    }
+
+    const score = zxcvbn(val).score
+    desc.html(desc_list[score])
+    meter.val((score + 1) * 20)
+
+    return true;
+})
+
+$('#passwd-update-btn').click(function () {
     const oldpass = $('#passwd-old').val();
     const newpass = $('#passwd-new').val();
 
@@ -108,7 +127,7 @@ $('#passwd-update-btn').click(function(){
             new: newpass,
         },
         dataType: 'json',
-    }).done(function(res){
+    }).done(function (res) {
         alert_float(res.message, res.success);
     });
 });

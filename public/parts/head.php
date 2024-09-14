@@ -115,7 +115,7 @@
     // Helpers to locate files
     function getManifest(): array
     {
-        $content = file_get_contents(__DIR__ . '/dist/.vite/manifest.json');
+        $content = file_get_contents(dirname(__DIR__, $levels=1) . '/dist/.vite/manifest.json');
         return json_decode($content, true);
     }
 

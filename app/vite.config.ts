@@ -16,7 +16,7 @@ export default defineConfig({
         emptyOutDir: true,
         manifest: true,
         rollupOptions: {
-            input: './src/test.tsx',
+            input: ['./src/address_book.tsx']
         }
     },
     server: {

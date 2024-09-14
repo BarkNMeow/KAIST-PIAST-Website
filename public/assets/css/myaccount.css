@@ -1,8 +1,8 @@
-html{
+html {
     --subnavbar-height: 0rem;
 }
 
-.account-auth-wrapper{
+.account-auth-wrapper {
     display: flex;
     align-items: center;
     grid-column: 1 / 3;
@@ -14,27 +14,27 @@ html{
     background: var(--grey-248);
 }
 
-.account-auth-wrapper .bi{
+.account-auth-wrapper .bi {
     font-size: 1.35rem;
     margin-right: .4rem;
 }
 
-.account-auth-wrapper .bi-check-lg{
+.account-auth-wrapper .bi-check-lg {
     color: var(--yesgreen);
 }
 
-.account-auth-wrapper .bi-x-lg{
+.account-auth-wrapper .bi-x-lg {
     color: var(--nored);
 }
 
-.account-wrapper{
+.account-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem 2rem;
 }
 
 
-.account-info-wrapper{
+.account-info-wrapper {
     display: grid;
     grid-template-columns: max-content minmax(10rem, 18rem);
     align-content: flex-start;
@@ -45,43 +45,45 @@ html{
     gap: .8rem 1.5rem;
 }
 
-.account-title{
+.account-title {
     font-size: 1.35rem;
     font-weight: var(--bold);
     margin-top: -.5rem;
     margin-bottom: .3rem;
 }
 
-.account-info-wrapper > div:first-child{
+.account-info-wrapper>div:first-child {
     grid-column: 1 / 3;
 }
 
-.account-info-wrapper > div:nth-child(n + 1){
+.account-info-wrapper>div:nth-child(n + 1) {
     height: 1.75rem;
 }
 
-.account-info-wrapper > div:nth-child(2n){
+.account-info-wrapper>div:nth-child(2n) {
     font-weight: var(--medium);
     text-align: right;
 }
 
-.account-info-wrapper > div:nth-child(2n + 3){
+.account-info-wrapper>div:nth-child(2n + 3) {
     display: flex;
-    padding-right: 1rem;;
+    padding-right: 1rem;
+    ;
 }
 
-.account-info-wrapper > div:last-child{
+.account-info-wrapper>div:last-child {
     grid-column: 1 / 3;
     text-align: center;
     margin-top: 1.5rem;
 }
 
-.account-info-wrapper > div:last-child button{
+.account-info-wrapper>div:last-child button {
     font-size: 1.1rem;
     height: 2rem;
 }
 
-.account-info-wrapper input, .account-info-wrapper select{
+.account-info-wrapper input,
+.account-info-wrapper select {
     border-width: 0 0 2px 0 !important;
     border-radius: 0 !important;
     padding: 0 !important;
@@ -89,31 +91,50 @@ html{
     min-width: 0;
 }
 
-.account-info-wrapper input:focus, .account-info-wrapper select:focus{
+.account-info-wrapper input:focus,
+.account-info-wrapper select:focus {
     box-shadow: none !important;
     border-color: var(--black);
 }
 
-#info-yr{
+#info-yr {
     width: 1.75rem;
 }
 
-#info-maj{
+#info-maj {
     width: calc(100% - 5rem);
     margin-left: 1rem;
 }
 
-#info-by{
+#info-by {
     width: calc(50% - 2.2rem);
 }
 
-#info-bd, #info-bm{
+#info-bd,
+#info-bm {
     width: calc(25% - 1.65rem);
     margin-left: .9rem;
 }
 
-@media screen and (max-width: 768px){
-    .account-wrapper{
+#passwd-strength {
+    transform: translateY(-.6rem);
+    align-items: center;
+}
+
+#passwd-strength meter {
+    flex-grow: 1;
+    height: 1rem;
+    margin-top: .15rem;
+}
+
+#passwd-strength span {
+    width: 4rem;
+    padding-left: .6rem;
+    font-size: .9rem;
+}
+
+@media screen and (max-width: 768px) {
+    .account-wrapper {
         display: flex;
         flex-direction: column;
         max-width: 30rem;

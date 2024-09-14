@@ -35,8 +35,6 @@ function tryLogin() {
         return;
     }
 
-    console.log(';asdfasdf');
-
     $.ajax({
         url: 'api/authquery.php',
         type: 'post',
@@ -81,7 +79,6 @@ let checkfunc = {
 let flag = false;
 Object.keys(checkfunc).forEach((key) => {
     $('#signup-' + key).on('input blur', function () {
-        console.log(key);
         const verify = checkfunc[key]($(this).val());
 
         if (['by', 'bm', 'bd'].includes(key)) checklist['bday'] = verify;
@@ -99,7 +96,21 @@ Object.keys(checkfunc).forEach((key) => {
 });
 
 function verifyPassword(val) {
-    return (val.length >= 8);
+    const desc_list = ['포스텍', '약함', '중간', '강함', '와!샌즈']
+
+    const meter = $('#signup-passwd-strength meter'), desc = $('#signup-passwd-strength span');
+
+    if (val.length < 8) {
+        meter.val(0)
+        desc.html('짧음')
+        return false;
+    }
+
+    const score = zxcvbn(val).score
+    desc.html(desc_list[score])
+    meter.val((score + 1) * 20)
+
+    return true;
 }
 
 function verifyDate(_) {

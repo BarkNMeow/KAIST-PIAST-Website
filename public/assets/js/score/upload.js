@@ -4,7 +4,7 @@ let pdfHandler = new Promise((resolve, reject) => {resolve();})
 
 $('.bbs-title').on('input', checkValid);
 $('.bbs-tag').on('input', checkValid);
-$('.bbs-file').on('change', function(){
+$('#bbs-file').on('change', function(){
     pdfHandler = new Promise((resolve, reject) => {
         const fileReader = new FileReader();
 
@@ -37,7 +37,7 @@ $('.bbs-file').on('change', function(){
             });
         };
 
-        fileReader.readAsArrayBuffer($('.bbs-file')[0].files[0]);
+        fileReader.readAsArrayBuffer($(this)[0].files[0]);
     });
 
     $('.uploaded-name').remove();
@@ -71,12 +71,13 @@ $('input[type=range]').on('input', function(){
 
 function checkValid(){
     let flag = true;
-    if($('.bbs-title').val() == '') flag = false;
-    if($('.bbs-tag').val() == '') flag = false;
+    if($('#bbs-title').val() == '') flag = false;
+    if($('#bbs-composer').val() == '') flag = false;
+    if($('#bbs-tag').val() == '') flag = false;
     if($('input[name=score-type]:checked').length == 0) flag = false;
     if($('input[name=score-genre]:checked').length == 0) flag = false;
 
-    const file =  $('.bbs-file')[0].files[0];
+    const file =  $('#bbs-file')[0].files[0];
     if($('#i').val() == 0 && !file){
         flag = false;
     }
@@ -93,11 +94,12 @@ $('.submit-wrapper button').on('click', function(){
 
     pdfHandler.then((blob) => {
         let bbsData = new FormData();
-        const file =  $('.bbs-file')[0].files[0];
-    
-        bbsData.append('why', 'new_score');
-        bbsData.append('title', $('.bbs-title').val());
-        bbsData.append('tag', $('.bbs-tag').val());
+        const file =  $('#bbs-file')[0].files[0];
+
+        bbsData.append('why', 'new_score'); // 악보 수정하는 기능 없음?
+        bbsData.append('title', $('#bbs-title').val());
+        bbsData.append('composer', $('#bbs-composer').val());
+        bbsData.append('tag', $('#bbs-tag').val());
         bbsData.append('file', file);
 
         if(blob){

@@ -21,7 +21,7 @@
 <!DOCTYPE html>
 <head>
     <?php include 'parts/head.php'?>
-    <link href="../assets/css/myaccount.css" rel="stylesheet">
+    <?php css('../assets/css/myaccount.css'); ?>
 </head>
 <body>
     <header class="border-bottom">
@@ -84,15 +84,17 @@
                     <input id="passwd-new" type="password" placeholder="새로운 비밀번호" autocomplete="new-password">
                 </div>
                 <div></div>
-                <div>
-                    <meter></meter>
+                <div id="passwd-strength">
+                    <meter min="0" low="45" optimum="90" high="75" max="100"></meter>
+                    <span>짧음</span>
                 </div>
                 <div>
                     <button id="passwd-update-btn" class="btn-black btn-radius" disabled>변경</button>
                 </div>
             </div>
         </div>
-        <?php script('../assets/js/myaccount.js'); ?>
+        <?php script('assets/js/myaccount.js'); ?>
+        <?php script('assets/js/zxcvbn.js'); ?>
     </main>
     <footer>
         <?php include 'parts/footer.php'?>

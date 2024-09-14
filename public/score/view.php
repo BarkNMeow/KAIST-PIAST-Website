@@ -57,6 +57,10 @@
         $sql->execute();
         $file = $sql->fetch();
 
+        //$sql = $pdo->prepare('SELECT * FROM file');
+        //$sql->execute();
+        //$filelist = $sql->fetch();
+
     } catch(Exception $e){
         alert('유효하지 않은 접근입니다.');
     }

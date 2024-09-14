@@ -76,6 +76,7 @@
                             <button type="button" onclick="changeFormState(2);">비밀번호 찾기</button>
                         </div>
                     </div>
+                    <!-- Signup form begins -->
                     <div id="signup-wrapper" style="visibility: hidden">
                         <div>
                             <input id="signup-email" placeholder="KAIST 이메일(ID)*">
@@ -83,8 +84,8 @@
                         <div>
                             <input type="password" placeholder="비밀번호(최소 8자)*" id="signup-passwd" autocomplete="new-password">
                         </div>
-                        <div class="border-bottom">
-                            <meter id="signup-passwd-strength"></meter>
+                        <div class="border-bottom" id="signup-passwd-strength">
+                            <meter min="0" low="45" optimum="90" high="75" max="100"></meter>
                             <span>짧음</span>
                         </div>
                         <div>
@@ -135,6 +136,7 @@
                             <button class="btn-radius btn-grey" onclick="changeFormState(0);">뒤로</button>
                         </div>
                     </div>
+                    <!-- Signup form ends -->
                     <div id="signupdone-wrapper" style="visibility: hidden">
                         <p>가입이 완료되었습니다!</p>
                         <p><a href="https://mail.kaist.ac.kr">카이스트 메일</a>로 온 인증 메일을 확인해주세요.</p>
@@ -151,6 +153,7 @@
             </div>
         </div>
         <?php script('assets/js/login.js'); ?>
+        <?php script('assets/js/zxcvbn.js'); ?>
     </main>
     <input id="login-redirect-href" type="hidden" value="<?php echo $_GET['r']; ?>">
 </body>

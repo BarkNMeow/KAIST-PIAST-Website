@@ -1,16 +1,16 @@
-html{
+html {
     overflow-y: auto;
     height: 100%;
 }
 
-main{
+main {
     background: url('../img/loginbg.jpg');
     background-position: center;
-    background-size: cover; 
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
-.overlay-wrapper{
+.overlay-wrapper {
     max-width: 40rem;
     height: fit-content;
     margin-top: -1rem;
@@ -19,18 +19,25 @@ main{
     opacity: 0;
 }
 
-.overlay-fade-in{
+.overlay-fade-in {
     animation-name: overlay-fade-in;
     animation-duration: .75s;
     animation-fill-mode: both;
 }
 
 @keyframes overlay-fade-in {
-    from {margin-top: -1rem; opacity: 0; }
-    to {margin-top: 3rem; opacity: 1; }
+    from {
+        margin-top: -1rem;
+        opacity: 0;
+    }
+
+    to {
+        margin-top: 3rem;
+        opacity: 1;
+    }
 }
 
-.contract-view{
+.contract-view {
     height: calc(50vh - 12rem);
     max-height: 15rem;
     margin: .35rem 0 .7rem 0;
@@ -41,7 +48,7 @@ main{
     font-weight: var(--regular);
 }
 
-.contract-radio{
+.contract-radio {
     display: flex;
     align-items: center;
     margin-top: 1.5rem;
@@ -49,16 +56,16 @@ main{
     font-weight: var(--regular);
 }
 
-.contract-radio input{
+.contract-radio input {
     margin-right: .3rem;
     margin-left: .75rem;
 }
 
-.contract-radio > div:nth-child(2){
+.contract-radio>div:nth-child(2) {
     margin-left: auto;
 }
 
-main{
+main {
     display: block;
     width: 100%;
     max-width: unset;
@@ -67,14 +74,14 @@ main{
     padding: 0;
 }
 
-.content-wrapper{
+.content-wrapper {
     width: 100%;
     height: 100%;
     padding: 10vh 1rem 0 1rem;
     background: rgba(0, 0, 0, 0.7);
 }
 
-.box-wrapper{
+.box-wrapper {
     width: 100%;
     max-width: 20rem;
     height: fit-content;
@@ -84,18 +91,18 @@ main{
     background: var(--white);
 }
 
-.form-title{
+.form-title {
     margin-bottom: .75rem;
     text-align: center;
 }
 
-.form-title svg{
+.form-title svg {
     width: 4.5rem;
     height: 4.5rem;
     margin-bottom: -.5rem;
 }
 
-#form-wrapper{
+#form-wrapper {
     height: fit-content;
     position: relative;
     overflow-x: hidden;
@@ -104,40 +111,48 @@ main{
     transition-property: height;
 }
 
-#form-wrapper.state0{
+#form-wrapper.state0 {
     height: 16.5rem;
 }
 
-#form-wrapper.state1{
+#form-wrapper.state1 {
     height: 23.5rem;
 }
 
-#form-wrapper.state2, #form-wrapper.state4{
+#form-wrapper.state2,
+#form-wrapper.state4 {
     height: 9rem;
 }
 
-#form-wrapper.state3{
+#form-wrapper.state3 {
     height: 11rem;
 }
 
-#form-wrapper > div{
+#form-wrapper>div {
     position: absolute;
     width: 100%;
     padding: 0 2px;
 }
 
-div.fade-out{
+div.fade-out {
     animation-name: fade-out;
     animation-duration: .5s;
     animation-fill-mode: both;
 }
 
 @keyframes fade-out {
-    from {opacity: 1; visibility: visible;}
-    to {opacity: 0; visibility: hidden;}
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 
-div.fade-in{
+div.fade-in {
     animation-name: fade-in;
     animation-duration: .5s;
     animation-fill-mode: both;
@@ -145,28 +160,37 @@ div.fade-in{
 }
 
 @keyframes fade-in {
-    from {opacity: 0; visibility: hidden;}
-    to {opacity: 1; visibility: visible;}
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
 }
 
-#login-wrapper > div{
+#login-wrapper>div {
     width: 100%;
 }
 
-#login-wrapper > div:first-child, #login-wrapper > div:nth-child(2){
+#login-wrapper>div:first-child,
+#login-wrapper>div:nth-child(2) {
     margin-top: .6rem;
     font-size: .8rem;
     color: var(--grey-144);
 }
 
-#login-email, #login-passwd{
+#login-email,
+#login-passwd {
     width: 100%;
     height: 1.8rem;
     margin-top: .25rem;
     font-size: 1rem;
 }
 
-#login-wrapper > div:nth-child(3){
+#login-wrapper>div:nth-child(3) {
     display: flex;
     align-items: center;
     margin-top: 1rem;
@@ -174,15 +198,15 @@ div.fade-in{
     color: var(--grey-160);
 }
 
-#login-stay{
+#login-stay {
     margin: 0 .3rem 0 0;
 }
 
-#login-wrapper > div:nth-child(4){
+#login-wrapper>div:nth-child(4) {
     margin-top: 1.75rem;
 }
 
-.login-btn{
+.login-btn {
     width: 100%;
     height: 2.5rem;
     background: var(--white);
@@ -193,12 +217,12 @@ div.fade-in{
     font-weight: var(--bold);
 }
 
-.login-btn:hover{
+.login-btn:hover {
     background: var(--black);
     color: var(--white);
 }
 
-#login-wrapper > div:last-child{
+#login-wrapper>div:last-child {
     width: 100%;
     height: fit-content;
     margin-top: .5rem;
@@ -206,7 +230,7 @@ div.fade-in{
     color: var(--grey-192);
 }
 
-#login-wrapper > div:last-child button{
+#login-wrapper>div:last-child button {
     background: none;
     font-size: 0.8rem;
     color: var(--grey-192);
@@ -214,18 +238,18 @@ div.fade-in{
     transition-duration: .2s;
 }
 
-#login-wrapper > div:last-child button:hover{
-    color:var(--grey-112);
+#login-wrapper>div:last-child button:hover {
+    color: var(--grey-112);
 }
 
-#signup-wrapper > div{
+#signup-wrapper>div {
     display: flex;
     align-items: center;
     padding: 2px 0;
     margin-bottom: .25rem;
 }
 
-#signup-wrapper > div:nth-child(3){
+#signup-wrapper>div:nth-child(3) {
     display: flex;
     align-items: center;
     margin-top: -.15rem;
@@ -234,112 +258,120 @@ div.fade-in{
     font-size: .75rem;
 }
 
-#signup-wrapper > div:nth-child(3) meter{
+#signup-wrapper>div:nth-child(3) meter {
     flex-grow: 1;
     height: 1rem;
     margin-top: .15rem;
-    margin-right: .4rem;
 }
 
-#signup-wrapper > div:nth-child(3) span{
-    width: 2rem;
-    text-align: center;
+#signup-wrapper>div:nth-child(3) span {
+    width: 3rem;
+    padding-left: .6rem;
 }
 
-#signup-wrapper > input:not([type=checkbox]):not([type=radio]){
+#signup-wrapper>input:not([type=checkbox]):not([type=radio]) {
     height: 1.8rem;
 }
 
-#signup-email, #signup-passwd, #signup-phonenum{
+#signup-email,
+#signup-passwd,
+#signup-phonenum {
     width: 100%;
 }
 
-#signup-gen, #signup-yr{
+#signup-gen,
+#signup-yr {
     width: 3rem;
 }
 
-#signup-gen{
+#signup-gen {
     margin-right: .2rem;
 }
 
-#signup-sex{
+#signup-sex {
     width: 3.25rem;
 }
 
-#signup-nm{
+#signup-nm {
     width: calc(100% - 8rem);
     margin: 0 auto 0 .4rem;
 }
 
-#signup-maj{
+#signup-maj {
     margin-left: .3rem;
     flex-grow: 1;
 }
 
-#signup-by{
+#signup-by {
     width: calc(50% - .3rem);
 }
 
-#signup-bm, #signup-bd{
+#signup-bm,
+#signup-bd {
     width: calc(25% - .15rem);
 }
 
-#signup-wrapper > div:nth-child(6) input:not(:last-child){
+#signup-wrapper>div:nth-child(6) input:not(:last-child) {
     margin-right: .3rem;
 }
 
-#signup-wrapper > div:nth-child(8){
+#signup-wrapper>div:nth-child(8) {
     margin-top: 1rem;
     font-size: .95rem;
 }
 
-#signup-wrapper > div:nth-child(8) button{
+#signup-wrapper>div:nth-child(8) button {
     height: 1.5rem;
     margin-left: .7rem;
     font-size: inherit;
 }
 
-#signup-wrapper > div:last-child{
+#signup-wrapper>div:last-child {
     justify-content: center;
     margin-top: 1.75rem;
 }
 
-#signup-wrapper > div:last-child > button:last-child{
+#signup-wrapper>div:last-child>button:last-child {
     margin-left: .4rem;
 }
 
-#passwdlost-wrapper, #signupdone-wrapper, #passwddone-wrapper{
+#passwdlost-wrapper,
+#signupdone-wrapper,
+#passwddone-wrapper {
     word-break: keep-all;
     text-align: center;
 }
 
-#passwdlost-wrapper input{
+#passwdlost-wrapper input {
     width: 100%;
 }
 
-#passwdlost-wrapper > div:nth-child(2){
+#passwdlost-wrapper>div:nth-child(2) {
     margin-top: .75rem;
     margin-bottom: 1.75rem;
 }
 
-#signupdone-wrapper a, #passwddone-wrapper a{
+#signupdone-wrapper a,
+#passwddone-wrapper a {
     font-weight: var(--medium);
     color: var(--black);
     text-decoration: underline;
     transition-duration: .2s;
 }
 
-#signupdone-wrapper a:hover, #passwddone-wrapper a:hover{
+#signupdone-wrapper a:hover,
+#passwddone-wrapper a:hover {
     color: var(--grey-96);
 }
 
-.signupdone-text-small{
+.signupdone-text-small {
     font-size: .8rem;
     font-weight: var(--light);
     color: var(--grey-112);
     margin-top: .5rem;
 }
 
-#signupdone-wrapper button, #passwddone-wrapper button{
+#signupdone-wrapper button,
+#passwddone-wrapper button {
     margin-top: 1.25rem;
 }
