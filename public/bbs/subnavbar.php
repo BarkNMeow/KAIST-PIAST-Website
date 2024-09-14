@@ -17,6 +17,10 @@
             <div></div>
         </div>
         <div class="subnavbar-menu">
+            <a href="../bbs/list?b=4">개발노트</a>
+            <div></div>
+        </div>
+        <div class="subnavbar-menu">
             <a href="../bbs/list?b=-1">갤러리</a>
             <div></div>
         </div>

@@ -98,7 +98,9 @@
                         
                         echo '<option'.$arr[2].' value="2">자유게시판</option>';
                         echo '<option'.$arr[3].' value="3">건의사항</option>';
-                        echo '<option'.$arr[4].' value="4">갤러리</option>';
+                        if(is_dev())
+                            echo "<option {$arr[4]} value=\"4\">개발노트</option>";
+                        echo '<option'.$arr[-1].' value="4">갤러리</option>';
                     ?>
                 </select>
                 <div id="bbs-tag-fake">
