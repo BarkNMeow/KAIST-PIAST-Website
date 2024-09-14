@@ -2,6 +2,7 @@ The project started in 2021 Summer, but opened later for cooperative management 
 
 # External Libraries
 * [Quill](https://quilljs.com/)
+* [zxcvbn](https://github.com/dropbox/zxcvbn)
 
 # Contributors
 * Lee Junmo
