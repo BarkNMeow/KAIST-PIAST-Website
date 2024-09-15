@@ -1,4 +1,4 @@
-function getConfig(max, data, color, name, unit){
+function getConfig(max, data, color, name, unit) {
     return {
         type: 'doughnut',
         data: {
@@ -27,11 +27,11 @@ function getConfig(max, data, color, name, unit){
         },
         plugins: [{
             id: 'center',
-            beforeDraw: function(chart, args, options){
+            beforeDraw: function (chart, args, options) {
                 const ctx = chart.ctx;
                 const h = chart.chartArea.height;
                 const w = chart.chartArea.width;
-                
+
                 ctx.save();
                 ctx.textAlign = 'center';
 
@@ -43,7 +43,6 @@ function getConfig(max, data, color, name, unit){
                 ctx.textBaseline = 'top';
                 ctx.fillText(data + ' / ' + max + unit, w / 2, h / 2 + 6);
                 // ctx.restore();
-                console.log(chart);
             }
         }]
     }
@@ -56,3 +55,14 @@ const charta = new Chart($('#charta'), getConfig(maxa, a, 0, '활동 점수', '�
 const chartp = new Chart($('#chartp'), getConfig(maxp, p, 60, '피아노 점수', '점'))
 const chartj = new Chart($('#chartj'), getConfig(maxj, j, 100, '정모 출석', '회'))
 const chartb = new Chart($('#chartb'), getConfig(conf_maxb, conf_b, 200, '동비 납부', '원'));
+
+$('.bi-clipboard').click(function () {
+    const acc_num = $('#account-num').html()
+
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(acc_num);
+        alert_float('계좌번호가 복사되었습니다!', true);
+    } else {
+        alert_float('브라우저에서 복사 API를 지원하지 않습니다 :(', false);
+    }
+});

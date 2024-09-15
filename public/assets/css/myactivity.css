@@ -218,6 +218,17 @@ html {
     background: var(--grey-192);
 }
 
+.bankacc-container i {
+    cursor: pointer;
+    margin-left: .3rem;
+    color: var(--grey-96);
+    transition-duration: .2s;
+}
+
+.bankacc-container i:hover {
+    color: var(--grey-128);
+}
+
 .due-container {
     display: flex;
     padding: .5rem .8rem;

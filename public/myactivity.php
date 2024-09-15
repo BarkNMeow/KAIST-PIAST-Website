@@ -251,16 +251,17 @@
         </div>
         <div class="tab-container" style="display: none;">
             <div class="bankacc-container border">
-                <div>입금 계좌: <?php echo htmlspecialchars($moneyconfig['accountnum']); ?></div>
+                입금 계좌: <span id="account-num"><?php echo htmlspecialchars($moneyconfig['accountnum']); ?></span>
+                <i class="bi bi-clipboard"></i>
             </div>
             <div class="due-container border">
                 <div>회비</div>
                 <div class="border-right" <?php echo $money['duepaiddate'] ? '' : 'style="color: var(--nored)"' ?>>
-                    <?php echo ($money['due'] - $money['duepaid'])."원 미납(총 {$money['due']}원)" ?>
+                    <?php echo ($money['due'] - $money['duepaid'])."원 미납 (총 {$money['due']}원)" ?>
                 </div>
                 <div>동비</div>
                 <div <?php echo $money['duepaiddate'] ? '' : 'style="color: var(--nored)"' ?>>
-                    <?php echo ($money['due'] - $money['duepaid'])."원 미납(총 {$money['due']}원)" ?>
+                    <?php echo ($money['due'] - $money['duepaid'])."원 미납 (총 {$money['due']}원)" ?>
                 </div>
             </div>
             <div class="border">
