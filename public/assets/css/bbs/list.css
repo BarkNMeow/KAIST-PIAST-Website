@@ -55,7 +55,7 @@
 }
 
 .search-window span {
-    color: var(--grey-232);
+    color: var(--grey-224);
 }
 
 .search-option,
@@ -109,11 +109,11 @@
 }
 
 .bbs-respond {
-    background: var(--grey-232);
+    background: var(--grey-240);
 }
 
 .bbs-notice {
-    background: var(--grey-232);
+    background: var(--grey-240);
     font-weight: var(--medium);
 }
 

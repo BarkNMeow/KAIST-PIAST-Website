@@ -1,12 +1,12 @@
-#addlist-overlay .overlay-wrapper{
+#addlist-overlay .overlay-wrapper {
     max-width: 24rem;
 }
 
-#addlist-search-input{
+#addlist-search-input {
     width: calc(100% - 4.8rem);
 }
 
-#addlist-overlay-window{
+#addlist-overlay-window {
     display: grid;
     grid-template-columns: 100% 100%;
     column-gap: 2rem;
@@ -14,36 +14,37 @@
     overflow-x: hidden;
 }
 
-#addlist-overlay-window > div{
+#addlist-overlay-window>div {
     transition-duration: .3s;
 }
 
-.overlay-list-row span{
+.overlay-list-row span {
     font-weight: var(--light);
     margin-left: .3rem;
     color: var(--grey-112);
 }
 
-#addlist-overlay-window > div:last-child{
+#addlist-overlay-window>div:last-child {
     font-weight: var(--medium);
     padding-top: 2px;
     padding-right: 2px;
 }
 
-#addlist-overlay-window > div:last-child > div:not(:last-child){
+#addlist-overlay-window>div:last-child>div:not(:last-child) {
     display: flex;
     align-items: center;
     width: 100%;
     margin-bottom: .4rem;
 }
 
-#addlist-overlay-window > div:last-child input, #addlist-overlay-window > div:last-child select{
+#addlist-overlay-window>div:last-child input,
+#addlist-overlay-window>div:last-child select {
     width: calc(100% - 2.75rem);
     height: 1.9rem;
     margin-left: .3rem;
 }
 
-.tag-bar{
+.tag-bar {
     display: flex;
     align-items: center;
     width: 100%;
@@ -54,21 +55,22 @@
     background: var(--grey-248);
 }
 
-.tag-bar span{
+.tag-bar span {
     font-weight: var(--medium);
     font-size: 1.1rem;
     white-space: nowrap;
 }
 
-.tag-btn-window{
+.tag-btn-window {
     position: relative;
     height: 100%;
-    width: calc(100% - 7.9rem);
+    width: calc(100% - 8rem);
     margin: 0 1.5rem 0 .5rem;
     overflow: hidden hidden;
 }
 
-.tag-btn-window .left-hide, .tag-btn-window .right-hide{
+.tag-btn-window .left-hide,
+.tag-btn-window .right-hide {
     position: absolute;
     width: 3rem;
     top: 0;
@@ -76,42 +78,41 @@
     z-index: 1;
 }
 
-.tag-btn-window .left-hide{
+.tag-btn-window .left-hide {
     left: 0;
     background: linear-gradient(0.75turn, rgba(248, 248, 248, 0), rgba(248, 248, 248, 1));
 }
 
-.tag-btn-window .right-hide{
+.tag-btn-window .right-hide {
     right: 0;
     background: linear-gradient(0.25turn, rgba(248, 248, 248, 0), rgba(248, 248, 248, 1));
 }
 
-.tag-btn-container{
+.tag-btn-container {
     white-space: nowrap;
     transition-duration: .3s;
 }
 
-.btn-tag{
+.btn-tag {
     height: 1.8rem;
     padding: 0 .8rem;
     margin-right: .3rem;
-    border: 1px solid var(--grey-232);
     border-radius: 100rem;
     background: var(--white);
     color: var(--grey-144);
     transition-duration: .2s;
 }
 
-.btn-tag:hover{
+.btn-tag:hover {
     color: var(--black);
 }
 
-.btn-tag.selected{
+.btn-tag.selected {
     border-color: var(--black);
     color: var(--black);
 }
 
-.btn-move-window{
+.btn-move-window {
     height: 1.8rem;
     padding: 0 .3rem;
     margin-left: .1rem;
@@ -123,72 +124,72 @@
     transition-duration: .2s;
 }
 
-.btn-move-window:hover{
+.btn-move-window:hover {
     background: var(--grey-160);
 }
 
-.board tr th{
+.board tr th {
     color: var(--black);
     background: var(--white);
     border-top: 1px solid var(--black);
     border-bottom: 1px solid var(--black);
 }
 
-.board tr td{
+.board tr td {
     border-bottom: 1px solid var(--grey-192);
     color: var(--grey-96);
     background: var(--grey-240);
 }
 
-.board tr.type0 td{
+.board tr.type0 td {
     color: var(--black);
     background: var(--white);
 }
 
-.board tr :last-child:not(:first-child){
+.board tr :last-child:not(:first-child) {
     text-align: center;
 }
 
-.board tr td a{
+.board tr td a {
     color: var(--black);
     font-weight: var(--medium);
     transition-duration: .2s;
 }
 
-.board tr td a:hover{
+.board tr td a:hover {
     color: rgb(50, 50, 180);
 }
 
-.board i{
+.board i {
     cursor: pointer;
     color: var(--grey-192);
     transition-duration: .1s;
 }
 
-.board i:hover{
+.board i:hover {
     color: var(--grey-160);
 }
 
-.board .text-notaccept{
+.board .text-notaccept {
     color: var(--grey-208) !important;
 }
 
-.option-wrapper{
+.option-wrapper {
     width: 100%;
     margin-top: 1rem;
     display: flex;
     align-items: center;
 }
 
-#page-select{
+#page-select {
     margin-left: .4rem;
     margin-right: auto;
 }
 
-#score-add-btn{
+#score-add-btn {
     margin-right: .4rem;
 }
 
-.selector-wrapper{
+.selector-wrapper {
     margin-top: 1rem;
 }

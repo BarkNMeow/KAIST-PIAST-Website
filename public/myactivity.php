@@ -254,10 +254,13 @@
                 <div>입금 계좌: <?php echo htmlspecialchars($moneyconfig['accountnum']); ?></div>
             </div>
             <div class="due-container border">
-                <div>회비 </div>
-                <div>
-                    <div><?php echo $money['duepaiddate'] ? '납부 완료('.$money['duepaiddate'].')' : '납부되지 않음'; ?></div>
-                    <div><?php echo $money['duepaid'].'원 / '.$money['due'].'원';?></div>
+                <div>회비</div>
+                <div class="border-right" <?php echo $money['duepaiddate'] ? '' : 'style="color: var(--nored)"' ?>>
+                    <?php echo ($money['due'] - $money['duepaid'])."원 미납(총 {$money['due']}원)" ?>
+                </div>
+                <div>동비</div>
+                <div <?php echo $money['duepaiddate'] ? '' : 'style="color: var(--nored)"' ?>>
+                    <?php echo ($money['due'] - $money['duepaid'])."원 미납(총 {$money['due']}원)" ?>
                 </div>
             </div>
             <div class="border">
@@ -272,7 +275,6 @@
     <footer>
         <?php include 'parts/footer.php'?>
     </footer>
-    <?php?>
     <script>
         const maxa = <?php echo REQ_ASCORE ?>;
         const maxp = <?php echo REQ_PSCORE ?>;

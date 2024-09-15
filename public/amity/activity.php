@@ -108,20 +108,20 @@
                 <div class="tag-btn-container">
                     <?php
                         $selected = (!isset($_GET['a']) && !isset($_GET['g']) && !isset($_GET['t'])) ? ' selected' : '';
-                        echo '<button class="btn-tag'.$selected.'" name="all">전체</button>';
+                        echo '<button class="btn-tag border'.$selected.'" name="all">전체</button>';
 
                         $selected = (isset($_GET['a']) && $_GET['a'] == 0) ? ' selected' : '';
-                        echo '<button class="btn-tag'.$selected.'" name="a" value="0">미승인</button>';
+                        echo '<button class="btn-tag border'.$selected.'" name="a" value="0">미승인</button>';
 
                         $selected = (isset($_GET['t']) && $_GET['t'] == 0) ? ' selected' : '';
-                        echo '<button class="btn-tag'.$selected.'" name="t" value="0">활동내역</button>';
+                        echo '<button class="btn-tag border'.$selected.'" name="t" value="0">활동내역</button>';
 
                         $selected = ($_GET['t'] == 1) ? ' selected' : '';
-                        echo '<button class="btn-tag'.$selected.'" name="t" value="1">날갱</button>';
+                        echo '<button class="btn-tag border'.$selected.'" name="t" value="1">날갱</button>';
 
                         foreach($grouplist as $group){
                             $selected = ($_GET['g'] == $group['id']) ? ' selected' : '';
-                            echo '<button class="btn-tag'.$selected.'" name="g" value="'.$group['id'].'">'.htmlspecialchars($group['groupnm']).'</button>';
+                            echo '<button class="btn-tag border'.$selected.'" name="g" value="'.$group['id'].'">'.htmlspecialchars($group['groupnm']).'</button>';
                         }
                     ?>
                 </div>
