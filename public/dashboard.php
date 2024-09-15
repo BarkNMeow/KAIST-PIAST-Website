@@ -15,7 +15,7 @@
 
     global $pdo;
     try{
-        $sql = $pdo->prepare('SELECT id, title FROM bbs WHERE bbstype = 1 ORDER BY id DESC LIMIT 8');
+        $sql = $pdo->prepare('SELECT id, title FROM bbs WHERE bbstype >= 0 ORDER BY id DESC LIMIT 8');
         $sql->execute();
         $notice = $sql->fetchAll();
 
@@ -141,8 +141,8 @@
             </div>
             <div class="border notice">
                 <div class="title">
-                    공지사항
-                    <a class="seemore" href="bbs/list?b=1">모두 보기...</a>
+                    게시판
+                    <a class="seemore" href="bbs/list?b=0">모두 보기...</a>
                 </div>
                 <div class="notice-wrapper">
                     <?php
