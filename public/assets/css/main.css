@@ -307,6 +307,10 @@ select {
     border-top: 1px solid var(--grey-224);
 }
 
+.border-right {
+    border-right: 1px solid var(--grey-224);
+}
+
 .btn-black,
 .btn-grey,
 .btn-white,
