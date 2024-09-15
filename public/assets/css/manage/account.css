@@ -1,71 +1,74 @@
-#account-overlay .overlay-wrapper{
+#account-overlay .overlay-wrapper {
     max-width: 32rem;
     word-break: keep-all;
 }
 
-#account-overlay .overlay-wrapper h1{
+#account-overlay .overlay-wrapper h1 {
     margin: -.5rem 0 .5rem 0;
 }
 
-#account-overlay .overlay-wrapper > div{
+#account-overlay .overlay-wrapper>div {
     margin-top: .75rem;
 }
 
-#exec-overlay .overlay-wrapper{
+#exec-overlay .overlay-wrapper {
     max-width: 24rem;
     word-break: keep-all;
 }
 
-#execlist-search-input{
+#execlist-search-input {
     width: calc(100% - 4.8rem);
 }
 
-.table-option > div{
+.table-option>div {
     display: flex;
     align-items: center;
 }
 
-.table-option > div:nth-child(2){
-    padding: 0 .6rem;
-    margin-right: .6rem;
-    margin-left: auto;
-    border-left: 1px solid var(--black);
+.table-option>div:first-child {
+    padding-right: .8rem;
+    margin-right: .8rem;
     border-right: 1px solid var(--black);
 }
 
-.table-option > div:nth-child(2) i{
+.table-option>div:first-child i {
     color: var(--grey-64);
     font-size: 1.05rem;
 }
 
-.table-option > div:nth-child(2) > select{
+.table-option>div:first-child>select {
     margin-left: .3rem;
 }
 
-#account-search-input{
+.table-option>div:nth-child(3) {
+    margin-left: auto;
+}
+
+#account-search-input {
     max-width: 12rem;
 }
 
-#account-search-btn{
+#account-search-btn {
     margin-left: .2rem;
     padding: 0 .6rem;
 }
 
-.table{
+.table {
     height: calc(100% - 5.5rem);
 }
 
-.table-header-cell, .table-row{
+.table-header-cell,
+.table-row {
     grid-template-columns: 10rem 3.5rem 3.5rem 9rem 5rem 5rem;
 }
 
-#exec-wrapper{
+#exec-wrapper {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.exec-row{
+.exec-row {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -73,23 +76,21 @@
     border-radius: .5rem;
 }
 
-.exec-row > div:first-child{
+.exec-row>div:first-child {
     margin-top: -.1rem;
     font-size: 1.35rem;
     font-weight: var(--bold);
 }
 
-.exec-row > div:nth-child(2){
+.exec-row>div:nth-child(2) {
     flex-grow: 1;
     font-size: 1.025rem;
 }
 
-.overlay-list-row button{
+.overlay-list-row button {
     height: 1.6rem;
     padding: 0 .6rem;
     font-size: .9rem;
 }
 
-@media screen and (max-width: 1024px){
-    
-}
+@media screen and (max-width: 1024px) {}

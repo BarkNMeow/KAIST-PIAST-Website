@@ -40,12 +40,6 @@
         <div class="table-container">
             <div class="table-option">
                 <div>
-                    총&nbsp;<span id="activity-table-cnt">0</span>명이 선택되었습니다.
-                </div>
-                <div>
-                    <button id="activity-table-mode-btn"><i class="bi bi-eye-fill"></i> 보기 모드</button>
-                </div>
-                <div>
                     <i class="bi bi-funnel-fill"></i>
                     <select id="activity-search-filter">
                         <option value="0">전체</option>
@@ -54,6 +48,12 @@
                         <option value="3">제명 가능</option>
                     </select>
                     <button onclick="$('#overlay').show();"><i class="bi bi-three-dots-vertical"></i></button>
+                </div>
+                <div>
+                    총&nbsp;<span id="activity-table-cnt">0</span>명 선택됨
+                </div>
+                <div>
+                    <button id="activity-table-mode-btn"><i class="bi bi-eye-fill"></i> 보기 모드</button>
                 </div>
                 <div>
                     <input id="activity-search-input" placeholder="이름으로 검색">

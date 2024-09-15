@@ -79,9 +79,6 @@
         <div class="tab-container table-container">
             <div class="table-option">
                 <div>
-                    총&nbsp;<span id="account-table-cnt">0</span>명이 선택되었습니다.
-                </div>
-                <div>
                     <i class="bi bi-funnel-fill"></i>
                     <select id="account-search-filter">
                         <option value="0">전체</option>
@@ -89,6 +86,9 @@
                         <option value="2" selected>대기</option>
                         <option value="3">승인됨</option>
                     </select>
+                </div>
+                <div>
+                    총&nbsp;<span id="account-table-cnt">0</span>명 선택됨
                 </div>
                 <div>
                     <input id="account-search-input" placeholder="이름으로 검색">
