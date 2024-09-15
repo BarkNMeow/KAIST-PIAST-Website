@@ -76,6 +76,66 @@
                 </div>
             </div>
         </div>
+        <div class="score-option-wrapper border">
+            <div>종류</div>
+            <div>
+                <?php
+                    $nmlist = array('', '피아노', '연탄곡');
+                    for($i = 1; $i < count($nmlist); $i++){
+                        $checked = (isset($_GET['i']) && $row['scoretype'] == $i ? ' checked' : '');
+                        echo '<span class="radio-wrapper">'.$nmlist[$i].' <input type="radio" name="score-type" value="'.$i.'"'.$checked.'></span> ';
+                    }
+
+                    echo '<span class="radio-wrapper">기타 <input type="radio" name="score-type" value="0" '.(isset($_GET['i']) && $row['scoretype'] == 0 ? ' checked' : '').'></span>';
+                ?>
+            </div>
+            <div>장르</div>
+            <div>
+                <?php
+                    $nmlist = array('', '클래식', 'K-POP', '해외 팝', 'OST', '재즈', '뉴에이지');
+                    for($i = 1; $i < count($nmlist); $i++){
+                        $checked = (isset($_GET['i']) && $row['genre'] == $i ? ' checked' : '');
+                        echo '<span class="radio-wrapper">'.$nmlist[$i].' <input type="radio" name="score-genre" value="'.$i.'"'.$checked.'></span> ';
+                    }
+
+                    echo '<span class="radio-wrapper">기타 <input type="radio" name="score-genre" value="0" '.(isset($_GET['i']) && $row['genre'] == 0 ? ' checked' : '').'></span>';
+                ?>
+            </div>
+            <div>난이도</div>
+            <div>
+                <div class="diff-wrapper">
+                    <?php
+                        $diff = (isset($_GET['i']) ? $row['diff'] : 1);
+                        echo '<input type="range" id="score-diff" min="1" max="10" value="'.$diff.'">';
+                    ?>
+                    <span id="score-star">
+                        <?php
+                            $diff_tmp = $diff;
+                            for($i = 0; $i < 5; $i++){
+                                if($diff_tmp >= 2) echo '<i class="bi bi-star-fill"></i>';
+                                else if($diff_tmp == 1) echo '<i class="bi bi-star-half"></i>';
+                                else echo '<i class="bi bi-star"></i>';
+
+                                $diff_tmp -= 2;
+                            }
+                        ?>
+                    </span>
+                    <span id="score-diff-desc">
+                        <?php
+                            if(!isset($_GET['i'])) echo '드래그해서 입력';
+                            else {
+                                if($diff <= 2) echo '나비야';
+                                else if($diff <= 4) echo '쉬움';
+                                else if($diff <= 6) echo '적절';
+                                else if($diff <= 8) echo '어려움';
+                                else if($diff == 9) echo 'Liszt에게 쉬움';
+                                else echo '겁.나.어.렵.습.니.다!';
+                            }
+                        ?>
+                    <span>
+                </div>
+            </div>
+        </div>
         
         <div id="quill">
             <?php if(isset($_GET['i'])) echo purify_full($row['main']); ?>
@@ -84,77 +144,6 @@
             <button class="btn-white btn-radius" onclick="$('#bbs-file').trigger('click'); $('#bbs-file').show()">악보 첨부</button>
             <span id="bbs-file-summary"></span>
         </div>
-        <table class="bbs-option-wrapper">
-            <tr>
-                <td>
-                    종류
-                </td>
-                <td>
-                    <?php
-                        $nmlist = array('', '피아노', '연탄곡');
-                        for($i = 1; $i < count($nmlist); $i++){
-                            $checked = (isset($_GET['i']) && $row['scoretype'] == $i ? ' checked' : '');
-                            echo '<span class="radio-wrapper">'.$nmlist[$i].' <input type="radio" name="score-type" value="'.$i.'"'.$checked.'></span> ';
-                        }
-
-                        echo '<span class="radio-wrapper">기타 <input type="radio" name="score-type" value="0" '.(isset($_GET['i']) && $row['scoretype'] == 0 ? ' checked' : '').'></span>';
-                    ?>
-                    
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    장르
-                </td>
-                <td>
-                    <?php
-                        $nmlist = array('', '클래식', 'K-POP', '해외 팝', 'OST', '재즈', '뉴에이지');
-                        for($i = 1; $i < count($nmlist); $i++){
-                            $checked = (isset($_GET['i']) && $row['genre'] == $i ? ' checked' : '');
-                            echo '<span class="radio-wrapper">'.$nmlist[$i].' <input type="radio" name="score-genre" value="'.$i.'"'.$checked.'></span> ';
-                        }
-
-                        echo '<span class="radio-wrapper">기타 <input type="radio" name="score-genre" value="0" '.(isset($_GET['i']) && $row['genre'] == 0 ? ' checked' : '').'></span>';
-                    ?>
-                </td>
-            </tr>
-            <tr>
-                <td>난이도</td>
-                <td class="diff-cell">
-                    <div class="diff-wrapper">
-                        <?php
-                            $diff = (isset($_GET['i']) ? $row['diff'] : 1);
-                            echo '<input type="range" id="score-diff" min="1" max="10" value="'.$diff.'">';
-                        ?>
-                        <span id="score-star">
-                            <?php
-                                $diff_tmp = $diff;
-                                for($i = 0; $i < 5; $i++){
-                                    if($diff_tmp >= 2) echo '<i class="bi bi-star-fill"></i>';
-                                    else if($diff_tmp == 1) echo '<i class="bi bi-star-half"></i>';
-                                    else echo '<i class="bi bi-star"></i>';
-
-                                    $diff_tmp -= 2;
-                                }
-                            ?>
-                        </span>
-                        <span id="score-diff-desc">
-                            <?php
-                                if(!isset($_GET['i'])) echo '드래그해서 입력';
-                                else {
-                                    if($diff <= 2) echo '나비야';
-                                    else if($diff <= 4) echo '쉬움';
-                                    else if($diff <= 6) echo '적절';
-                                    else if($diff <= 8) echo '어려움';
-                                    else if($diff == 9) echo 'Liszt에게 쉬움';
-                                    else echo '겁.나.어.렵.습.니.다!';
-                                }
-                            ?>
-                        <span>
-                    </div>
-                </td>
-            </tr>
-        </table>
         <div class="submit-wrapper">
             <button class="btn-black btn-radius" disabled><?php echo (isset($_GET['i']) ? '수정하기' : '업로드')?></button>
         </div>
