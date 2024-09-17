@@ -20,11 +20,10 @@
         $sql->bindParam(':postid', $_GET['i']);
         $sql->bindValue(':score', BBS_SCORE);
         $sql->execute();
-        
         $row = $sql->fetch();
 
         if(!$row || ($row['view'] == -1)){
-            alert('존재하지 않거나 삭제된 게시물입니다.');
+            alert('존재하지 않거나 삭제된 게시물입니다.'.$_GET['i'].'asd');
             redirect('list?b='.$_GET['b'].'&p='.$_GET['p'].'&pp='.$_GET['pp']);
             return;
         }
@@ -57,12 +56,9 @@
         $sql->execute();
         $file = $sql->fetch();
 
-        //$sql = $pdo->prepare('SELECT * FROM file');
-        //$sql->execute();
-        //$filelist = $sql->fetch();
-
     } catch(Exception $e){
         alert('유효하지 않은 접근입니다.');
+        errlog($e);
     }
 
     $navbartitle = '악보';
@@ -95,7 +91,7 @@
                             <div id="post-dropdown" class="post-menu-dropdown" style="display: none">';
                     
                     if($delcond) echo '<div id="post-delete-btn">삭제<i class="bi bi-trash-fill"></i></div>';
-                    if($fixcond) echo '<a href="write?b='.$row['bbstype'].'&i='.$row['id'].'">수정<i class="bi bi-pencil-fill"></i></a>';
+                    if($fixcond) echo '<a href="write?b='.$row['bbstype'].'&i='.$row['postid'].'">수정<i class="bi bi-pencil-fill"></i></a>';
 
                     echo '</div></div>';
                 }
@@ -178,9 +174,6 @@
             <div class="tab-btn-menu-wrapper">
                 <button class="tab-btn selected" onclick="changeTab(0, this);" id="comment-tab-btn">댓글 (<?php echo $row['comcnt'];?>)</button>
             </div>
-            <div class="tab-btn-menu-wrapper">
-                <button class="tab-btn" onclick="changeTab(1, this);">첨부파일 (0)</button>
-            </div>
             <div id="tab-btn-border-bottom"></div>
         </div>
         <div class="tab-container" id="comment-tab">
@@ -198,20 +191,6 @@
                     </button>
                 </div>
             </div>
-        </div>
-        <div class="tab-container" style="display: none;">
-            <?php
-                if($filelist){
-                    echo '<div class="file-wrapper border">';
-                    foreach($filelist as $file){
-                        $icon = getfileicon($file['filenm']);
-                        echo '<a class="file-nm" href="download?id='.$file['id'].'&downloadhash='.$file['downloadhash'].'" download>'.$icon.'&nbsp;'.htmlspecialchars($file['filenm']).'</a><br>';
-                    }
-                    echo '</div>';
-                } else {
-                    echo '<div class="file-wrapper border text-grey">첨부파일이 없습니다!</div>';
-                }
-            ?>
         </div>
     </main>
     <footer>

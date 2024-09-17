@@ -12,10 +12,14 @@
             return;
         }
     }
+    
     if(isset($_GET['i'])){
         global $pdo;
 
-        $sql = $pdo->prepare('SELECT * FROM bbs b LEFT JOIN bbsscore s ON b.id = s.postid WHERE b.id = :postid');
+        $sql = $pdo->prepare('SELECT b.*, s.*, f.filenm FROM bbs b 
+                                LEFT JOIN bbsscore s ON b.id = s.postid 
+                                LEFT JOIN file f ON b.id = f.postid
+                                WHERE b.id = :postid');
         $sql->bindParam(':postid', $_GET['i']);
         $sql->execute();
         $row = $sql->fetch();
@@ -59,7 +63,7 @@
                 <input id="bbs-title" placeholder="곡 제목" maxlength="60" value="<?php if(isset($_GET['i'])) echo $row['title']; ?>">
             </div>
             <div>
-                <input id="bbs-composer" placeholder="가수 또는 작곡가" maxlength="30" value="<?php if(isset($_GET['i'])) echo $row['tag']; ?>">
+                <input id="bbs-composer" placeholder="가수 또는 작곡가" maxlength="30" value="<?php if(isset($_GET['i'])) echo $row['composer']; ?>">
                 <div id="bbs-tag-fake">
                     <?php
                         if($row['tag']){
@@ -141,11 +145,19 @@
             <?php if(isset($_GET['i'])) echo purify_full($row['main']); ?>
         </div>
         <div class="quill-bottom-wrapper">
-            <button class="btn-white btn-radius" onclick="$('#bbs-file').trigger('click'); $('#bbs-file').show()">악보 첨부</button>
-            <span id="bbs-file-summary"></span>
+            <button class="btn-white btn-radius" onclick="$('#bbs-file').trigger('click');">악보 첨부</button>
+            <span id="bbs-file-summary">
+                <?php
+                    if(isset($_GET['i'])) echo $row['filenm'].' (기존 파일)';
+                    else echo '첨부 파일이 없습니다.';
+                ?>
+            </span>
         </div>
         <div class="submit-wrapper">
-            <button class="btn-black btn-radius" disabled><?php echo (isset($_GET['i']) ? '수정하기' : '업로드')?></button>
+            <?php 
+                echo (isset($_GET['i']) ? ' <button class="btn-black btn-radius">수정하기</button>':
+                '<button class="btn-black btn-radius" disabled>업로드</button>');
+            ?>
         </div>
     </main>
     <footer>
@@ -158,5 +170,5 @@
     <input type="file" class="form-control" id="bbs-file" style="display:none;" accept=".pdf">
     <canvas id="page1" style="display: none"></canvas>
     <canvas id="page2" style="display: none"></canvas>
-    <?php script('../assets/js/score/upload.js'); ?>
+    <?php script('../assets/js/score/write.js'); ?>
 </body>

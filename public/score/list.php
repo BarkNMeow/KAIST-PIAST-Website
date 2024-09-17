@@ -115,7 +115,7 @@
                 echo '<option value="50"'.$page_sel[50].'>50개</option>';
             ?>
             </select>
-            <?php echo '<a href="upload"><button class="btn-white btn-radius">악보 업로드</button></a>'; ?>
+            <?php echo '<a href="write"><button class="btn-white btn-radius">악보 업로드</button></a>'; ?>
         </div>
         <div class="bbs-nav-wrapper">
             <div>
